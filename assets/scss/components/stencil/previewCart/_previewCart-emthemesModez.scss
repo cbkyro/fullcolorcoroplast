@@ -1,0 +1,184 @@
+// =============================================================================
+// PREVIEW CART (CSS)
+// =============================================================================
+//
+// 1. Override server-generated inline-css
+//
+// -----------------------------------------------------------------------------
+
+.previewCart {
+    @include breakpoint("medium") {
+        .productView {
+            flex-direction: row;
+        }
+    }
+
+    .productView-price {
+        margin-top: 0;
+        font-size: fontSize("larger");
+    }
+
+    .productView-info {
+        margin-bottom: spacing("quarter");
+        border-top: 0;
+    }
+
+    .productView-info-name {
+        margin-top: 0;
+    }
+
+    .productView-info-value {
+        margin-top: 0;
+    }
+    
+}
+
+.previewCartCheckout-additionalCheckoutButtons {
+    .CheckoutButton {
+        margin-top: spacing("half");
+    }
+}
+
+// Mini Preview Modal
+// ============================================================================
+
+.preview-modal--mini {
+    left: auto;
+    right: 35px;
+    transform: translateY(-50%);
+    min-height: remCalc(100px);
+    max-height: none;
+    width: 300px;
+    background: container("fill");
+    border: container("border");
+    box-shadow: 0 5px 30px rgba($color-black,0.1);
+
+    @include breakpoint("small") {
+        width: 400px;
+    }
+
+    .modal-close {
+        top: 0;
+        right: 0;
+
+        span {
+            display: block;
+
+            .papaSupermarket-style--modern & {
+                margin-top: -(remCalc(2px));
+            }
+        }
+    }
+
+    .modal-header {
+        padding: spacing("half") spacing("double") spacing("half") spacing("half");
+        .papaSupermarket-style--modern & {
+            padding: spacing("quarter") spacing("double") spacing("quarter") spacing("half");
+        }
+    }
+
+    .modal-header-title {
+        font-size: fontSize("smaller");
+        text-align: left;
+    }
+
+    .modal-body {
+        padding: spacing("half");
+    }
+
+    .previewCart {
+        display: flex;
+        flex-direction: column;
+
+        .productView-image {
+            width: 25%;
+            min-height: auto;
+            padding: 0 spacing("quarter") 0 0;
+            margin: 0 auto;
+        }
+    
+        .productView-details {
+            width: 75%;
+            padding: 0 0 0 spacing("quarter");
+            margin-bottom: 0;
+        }
+
+        .productView-title {
+            font-size: fontSize("smaller");
+        }
+
+        .productView-brand {
+            font-size: fontSize("smaller");
+        }
+
+        .productView-price {
+            font-size: fontSize("smaller");
+            margin-bottom: spacing("quarter");
+        }
+
+        .productView-info-name,
+        .productView-info-value {
+            margin-top: 0 !important;
+            font-size: fontSize("smaller");
+        }
+    }
+
+    .previewCartCheckout {
+        order: 2;
+        float: none;
+        width: 100%;
+        text-align: left;
+        padding: 0;
+        margin-top: spacing("half");
+        background: transparent;
+
+        > * {
+            display: none;
+        }
+
+        .button {
+            padding: spacing("third") spacing("base");
+            .papaSupermarket-style--modern & {
+                padding: spacing("quarter") spacing("half");
+            }
+        }
+
+        > .previewCartCheckout-checkoutButton { 
+            display: inline-block;
+            width: auto;
+        }
+
+        > .previewCartCheckout-viewCartButton {
+            // display: inline-block;
+            display: none;
+            width: auto;
+            margin-top: 0;
+            margin-left: spacing("half");
+        }
+
+        > .previewCartCheckout-autoClose {
+            display: block;
+            font-size: fontSize("smaller");
+            color: stencilColor("color-textSecondary");
+            margin: 0 0 0 spacing("half");
+            display: inline-block;
+        }
+    }
+
+    .productView {
+        order: 1;
+        float: none;
+        width: 100%;
+        align-items: flex-start;
+        margin: 0;
+        padding: 0;
+
+        .papaSupermarket-layout--left-sidebar & {
+            margin: 0;
+        }
+    }
+
+    .suggestiveCart {
+        display: none;
+    }
+}

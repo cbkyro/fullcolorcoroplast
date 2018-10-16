@@ -1,0 +1,1 @@
+{"components/emthemes-modez/category/ajax-products-grid":"<div class=\"emthemesModez-ajaxProducts-container\" data-emthemesmodez-ajax-products-url=\"/shop-all/\"></div>\n{{inject 'emthemesModez_enableAjaxProducts' true}}"}

@@ -1,0 +1,64 @@
+{{#if banners.top}}
+<div class="banners" data-banner-location="top">
+    {{#each banners.top}}
+        {{#if (occurrences this 'emthemesModezBannersBlock') '===' 0}}
+            <div class="banner">
+                {{{this}}}
+            </div>
+        {{/if}}
+    {{/each}}
+</div>
+{{/if}}
+<header class="header" role="banner">
+    <a href="#" class="mobileMenu-toggle" data-mobile-menu-toggle="menu">
+        <span class="mobileMenu-toggleIcon">Toggle menu</span>
+    </a>
+
+    <div class="emthemesModez-header-topSection">
+        <div class="container">
+            {{> components/common/navigation-top}}
+        </div>
+    </div>
+
+    <div class="emthemesModez-header-userSection emthemesModez-header-userSection--logo-{{theme_settings.logo-position}}"{{#if theme_settings.header_sticky}} data-stickymenu{{/if}}>
+        <div class="container">
+            {{> components/common/navigation}}
+
+            {{#if template_file '===' 'pages/home'}}
+                <h1 class="header-logo header-logo--{{theme_settings.logo-position}}">
+                    {{> components/common/store-logo}}
+                </h1>
+            {{else}}
+                <div class="header-logo header-logo--{{theme_settings.logo-position}}">
+                    {{> components/common/store-logo}}
+                </div>
+            {{/if}}
+
+            {{> components/common/quick-search}}
+        </div>
+    </div>
+
+    <div class="navPages-container{{#if theme_settings.navPages_bg_stretch}} navPages-container--bg{{/if}}" id="menu" data-menu>
+        <div class="container">
+            {{> components/common/navigation-menu}}
+        </div>
+    </div>
+
+</header>
+
+{{> components/common/quick-search style="mobileOnly"}}
+
+<div class="dropdown dropdown--quickSearch" id="quickSearch" aria-hidden="true" tabindex="-1" data-prevent-quick-search-close>
+    <div class="container">
+        <section class="quickSearchResults" data-bind="html: results"></section>
+    </div>
+</div>
+<div class="emthemesModez-overlay"></div>
+
+{{#if theme_settings.bannerAfterHeader '===' 'all'}}
+    <div data-emthemesmodez-remote-banner="emthemesModezBannersBlockAfterHeader"></div>
+{{else if theme_settings.bannerAfterHeader '===' 'nothome'}}
+    {{#unless template '===' 'pages/home'}}
+        <div data-emthemesmodez-remote-banner="emthemesModezBannersBlockAfterHeader"></div>
+    {{/unless}}
+{{/if}}

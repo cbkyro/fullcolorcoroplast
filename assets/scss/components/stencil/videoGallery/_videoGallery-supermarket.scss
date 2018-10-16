@@ -1,0 +1,52 @@
+.papaSupermarket-style--modern {
+    .videoGallery {
+        margin: spacing("single") 0 0;
+        border: 0;
+
+        .toggle-title {
+            font-size: fontSize("small");
+            padding: 0 spacing("single");
+            margin: 0 0 spacing("half");
+            font-weight: stencilFontWeight("body-font");
+
+            @include breakpoint("medium") {
+                font-size: fontSize("large");
+            }
+        }
+
+        .toggle-title-heading {
+            @include breakpoint("medium") {
+                display: inline-block;
+                border-bottom: 2px solid stencilColor("color-textHeading");
+            }
+        }
+    
+        .toggle-content.is-open {
+            padding: spacing("quarter");
+            background-color: container("fill");
+            border: container("border");
+            border-radius: $container-border-radius;
+            box-shadow: 0 3px 0 container("borderColor");
+
+            @include breakpoint("medium") {
+                padding: spacing("single");
+            }
+        }
+    }
+    
+    .videoGallery-list {
+        margin: 0 (-(spacing("quarter")));
+
+        @include breakpoint("medium") {
+            margin: 0 (-(spacing("single")));
+        }
+    }
+
+    .videoGallery-item {
+        padding: 0 spacing("quarter");
+
+        @include breakpoint("medium") {
+            padding: 0 spacing("single");
+        }
+    }
+}

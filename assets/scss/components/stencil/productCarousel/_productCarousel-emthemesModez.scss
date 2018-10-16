@@ -1,0 +1,61 @@
+.productCarousel {
+	.papaSupermarket-style--modern & {
+		margin: 0;
+	}
+	
+}
+
+.page-heading + .productCarousel {
+	.slick-prev,
+	.slick-next	{
+		$pd: spacing("half");
+		$h: remCalc(fontSize("small") * lineHeight("base")) + spacing("quarter") * 2; // same page-heading height
+
+		top: -(spacing("single") + $h);
+		margin: 0;
+		width: auto;
+		height: auto;
+		padding: $pd;
+		transform: none;
+
+		.emthemesModez-section--displayType-carousel & {
+			@include breakpoint("medium") {
+				top: -(spacing("double") + spacing("half") + $h);
+			}
+		}
+
+		&:before {
+			width: $h - $pd * 2;
+			height: $h - $pd * 2;
+			margin: 0;
+		}
+	}
+
+	.slick-prev {
+		left: auto;
+		right: (spacing("half") + spacing("quarter") + spacing("quarter") * 2);
+
+		.emthemesModez-section--displayType-carousel & {
+			@include breakpoint("medium") {
+				right: (spacing("half") + spacing("quarter") + spacing("quarter") * 2) + $column-gutter / 2;
+			}
+		}
+
+
+	}
+	.slick-next	{
+		right: 0;
+
+		.emthemesModez-section--displayType-carousel & {
+			@include breakpoint("medium") {
+				right: $column-gutter / 2;
+			}
+		}
+	}
+}
+
+.productCarousel-slide {
+	padding: 0;
+}
+
+

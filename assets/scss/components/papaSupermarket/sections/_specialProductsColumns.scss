@@ -1,0 +1,63 @@
+.papaSupermarket-specialProductsColumns {
+	@include u-listBullets("none");
+	@include grid-row($behavior: "nest");
+	font-size: 0; // 1
+}
+
+.papaSupermarket-specialProductsColumns-column {
+	@include grid-column(12, $float: none);
+    font-size: fontSize("base"); // 1
+    vertical-align: top;
+    display: inline-block;
+    position: relative;
+
+    @include breakpoint("medium") {
+    	width: grid-calc(4, $total-columns);
+    }
+
+    .page-heading {
+    	@extend %emthemesModez-section-page-heading;
+
+    	&:after {
+    		width: calc(100% - #{$column-gutter});
+    	}
+    }
+}
+
+// ============================================================================
+// Modern Style
+// ============================================================================
+.papaSupermarket-style--modern {
+	.papaSupermarket-specialProductsColumns {
+		margin: 0 (-(spacing("quarter")));
+	}
+
+	.papaSupermarket-specialProductsColumns-column {
+		padding: 0 spacing("quarter");
+
+		.productList {
+			background-color: container("fill");
+			border: container("border");
+			border-radius: $container-border-radius;
+			box-shadow: 0 3px 0 container("borderColor");
+			margin: 0;
+			padding: spacing("half") 0;
+
+			.product {
+				padding: spacing("quarter");
+				
+				@include breakpoint("medium") {
+					padding: 0;
+				}
+			}
+		}
+
+		+ .papaSupermarket-specialProductsColumns-column {
+			margin-top: spacing("single");
+
+			@include breakpoint("medium") {
+				margin-top: 0;
+			}
+		}
+	}
+}

@@ -1,0 +1,17 @@
+.modal {
+    overflow: visible; // Fix quickview -> choose product options: content disappear
+}
+
+.modal-close {
+    color: $color-textSecondary;
+
+    &:hover {
+        color: $color-textSecondary-hover;
+    }
+}
+
+.has-activeModal--miniPreview {
+    .modal-background {
+        display: none !important;
+    }
+}

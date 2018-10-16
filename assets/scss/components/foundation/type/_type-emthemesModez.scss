@@ -1,0 +1,70 @@
+body {
+	-webkit-font-smoothing: $font-smoothing;
+}
+
+[aria-selected],
+[aria-hidden] {
+	@include breakpoint("medium") {
+		outline: none;
+	}
+}
+
+
+h1.page-heading,
+.h1.page-heading {
+	font-size: fontSize("largest");
+	font-family: stencilFontFamily("headings-font");
+	font-weight: stencilFontWeight("headings-font");
+	margin-bottom: spacing("half");
+
+	@include breakpoint("medium") {
+		margin-bottom: spacing("single");
+
+		.papaSupermarket-page--pages-page &,
+		.papaSupermarket-page--pages-contact-us &,
+		.papaSupermarket-page--pages-blog &,
+		.papaSupermarket-page--pages-category &,
+		.papaSupermarket-page--pages-brand &,
+		.papaSupermarket-page--pages-brands &,
+		.papaSupermarket-page--pages-search & {
+			text-align: left;
+		}
+	}
+
+	.papaSupermarket-style--modern & {
+		font-weight: stencilFontWeight("body-font");
+		font-size: fontSize("large");
+
+		@include breakpoint("medium") {
+			margin-bottom: spacing("half");
+		}
+	}
+}
+
+.page-heading--mobileOnly {
+	@include breakpoint("medium") {
+		display: none;
+	}
+}
+
+.page-heading--desktopOnly {
+	display: none;
+
+	@include breakpoint("medium") {
+		display: block;
+	}
+}
+
+.emthemesModez-categoryPage-mainImage,
+.emthemesModez-brandPage-mainImage {
+	display: block;
+	margin: 0 auto spacing("single");
+
+	.papaSupermarket-style--modern & {
+		margin-bottom: spacing("half");
+	}
+}
+
+.u-hiddenVisually {
+	margin: 0 !important;
+}

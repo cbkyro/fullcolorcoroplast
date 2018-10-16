@@ -1,0 +1,56 @@
+<h2 class="page-heading">{{lang 'instagram.title'}}</h2>
+<div id="instafeed-carousel" class="emthemesModez-instafeed emthemesModez-instafeed--carousel {{#if style}}emthemesModez-instafeed--{{style}}{{/if}}" 
+    data-emthemesmodez-instafeed-carousel='{
+        "dots": false,
+        "infinite": false,
+        "mobileFirst": true,
+        "slidesToShow": 2,
+        "slidesToScroll": 2,
+        "responsive": [
+            {
+                "breakpoint": 1260,
+                "settings": {
+                    "slidesToScroll": 2,
+                    "slidesToShow": {{theme_settings.instagram_column}}
+                }
+            },
+            {
+                "breakpoint": 800,
+                "settings": {
+                    "slidesToScroll": 2,
+                    "slidesToShow": 3
+                }
+            },
+            {
+                "breakpoint": 550,
+                "settings": {
+                    "slidesToScroll": 2,
+                    "slidesToShow": 2
+                }
+            }
+        ]}'
+></div>
+
+<script type="text/javascript" src="{{cdn '/assets/vendor/instafeed/instafeed.min.js'}}"></script>
+<script type="text/javascript">
+// <![[
+    document.addEventListener('DOMContentLoaded', function () {
+        "use strict";
+        var feed = new Instafeed({
+            target: 'instafeed-carousel',
+            get: 'user',
+            userId: '{{theme_settings.instagram_userid}}',
+            accessToken: '{{theme_settings.instagram_token}}',
+            resolution: 'standard_resolution',
+            template: '<div class="emthemesModez-instafeed-item"><a href="{'+'{link}}" target="_blank" id="{'+'{id}}"><img src="{'+'{image}}" /></a></div>',
+            sortBy: 'most-recent',
+            limit: {{theme_settings.instagram_count}},
+            links: false,
+            after: function() {
+                document.getElementById(this.options.target).dispatchEvent(new CustomEvent("instafeedAfter"));
+            }
+        });
+        feed.run();
+    });
+// ]]>
+</script>

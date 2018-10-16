@@ -1,0 +1,38 @@
+.quickSearchResults {
+    margin-top: 0;
+    padding: 0 spacing("half") spacing("single");
+
+    @include breakpoint("medium") {
+        padding: spacing("single") 0;
+    }
+}
+
+.advancedSearch-form {
+    margin-bottom: spacing("half");
+}
+
+.quickSearchMessage {
+    margin-top: 0;
+}
+
+.category-suggestion {
+    width: auto;
+
+    @include breakpoint("small") {
+        width: 50%;
+    }
+
+    @include breakpoint("medium") {
+        width: width("4/12");
+    }
+}
+
+.papaSupermarket-style--modern .panel-body--searchSuggestions {
+    padding: 0 spacing("half");
+    margin-bottom: spacing("half");
+
+    @include breakpoint("medium") {
+        padding: 0;
+        margin-bottom: spacing("single");
+    }
+}

@@ -1,0 +1,43 @@
+---
+blog:
+    recent_posts:
+        limit: {{theme_settings.homepage_blog_posts_count}}
+---
+{{#partial "page"}}
+
+<main class="page">
+
+    {{#if theme_settings.layout '===' 'left-sidebar'}}
+    <div class="page-sidebar">
+        {{> components/papa-supermarket/home/sidebar}}
+    </div>
+    {{/if}}
+
+    {{#if page.sub_pages}}
+    <div class="page-sidebar page-sidebar--right">
+        <nav>
+            {{> components/papa-supermarket/sidebar/subpages}}
+        </nav>
+    </div>
+    {{/if}}
+
+    <div class="page-content {{#if theme_settings.layout '!==' 'left-sidebar'}}{{#unless page.sub_pages}}page-content--centered{{/unless}}{{/if}}">
+        {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+        <h1 class="page-heading">{{ page.title }}</h1>
+
+        <div class="page-content-body">
+        {{#if forms.contact.success}}
+            {{{lang 'forms.contact_us.successful' shopPath=urls.home}}}
+        {{else}}
+            <p>{{{page.content}}}</p>
+            {{> components/page/contact-us-form}}
+        {{/if}}
+        </div>
+
+    </div>
+
+</main>
+
+{{/partial}}
+
+{{> layout/base}}

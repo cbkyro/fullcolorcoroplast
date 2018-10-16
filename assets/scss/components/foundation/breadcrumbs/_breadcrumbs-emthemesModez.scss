@@ -1,0 +1,45 @@
+.breadcrumbs {
+	text-align: center;
+	margin-bottom: spacing("half");
+
+	@include breakpoint("small") {
+		margin-top: 0;
+
+		.container > &:first-child,
+		.account &,
+		.page-content--centered &,
+		.page-sidebar + .page-content &,
+		.papaSupermarket-layout--default & {
+			margin-top: spacing("third");
+		}
+	}
+
+	.papaSupermarket-page--pages-page &,
+	.papaSupermarket-page--pages-contact-us &,
+	.papaSupermarket-page--pages-blog-post &,
+	.papaSupermarket-page--pages-blog &,
+	.papaSupermarket-page--pages-category &,
+	.papaSupermarket-page--pages-brand &,
+	.papaSupermarket-page--pages-brands &,
+	.papaSupermarket-page--pages-search &,
+	.papaSupermarket-page--pages-product & {
+		@include breakpoint("medium") {
+			text-align: left;
+		}
+	}
+}
+.breadcrumb {
+	text-transform: uppercase;
+	
+}
+
+// Style Modern
+// ----------------------------------------------------------------------------
+.papaSupermarket-style--modern {
+	.breadcrumbs {
+
+		@include breakpoint("small") {
+			margin-top: 0 !important;
+		}
+	}
+}
