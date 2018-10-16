@@ -1,5 +1,5 @@
 {
-  "name": "Supermarket2",
+  "name": "Supermarket2 (Featured product count 24)",
   "version": "2.5.2",
   "meta": {
     "price": 15600,
@@ -1104,7 +1104,7 @@
         "specialProductsTab-heading-backgroundColor": "#000000",
         "specialProductsTab-heading-color-inactive": "#888888",
         "specialProductsTab-heading-backgroundColor-inactive": "#ffffff",
-        "specialProductsTab_products_count": 16,
+        "specialProductsTab_products_count": 24,
         "specialProductsTab_show_featured": true,
         "specialProductsTab_show_top": true,
         "specialProductsTab_show_new": true,
